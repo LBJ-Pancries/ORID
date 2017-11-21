@@ -59,13 +59,6 @@ class TodoListsController < ApplicationController
       format.html { redirect_to todo_lists_url, notice: 'Todo list was successfully destroyed.' }
       format.json { head :no_content }
     end
-    @todo_item = @todo_list.todo_items.find(params[:id])
-    if @todo_item.destroy
-      flash[:success] = "Todo List item was deleted."
-    else
-      falsh[:error] = "Todo List item could could not be deleted."
-    end
-    redirect_to @todo_list
   end
 
   private
