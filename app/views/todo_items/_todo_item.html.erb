@@ -1,0 +1,6 @@
+<%= form_for([@todo_list, @todo_list.todo_items.huild]) do |f| %>
+  <%= f.text_field :content, placeholder: "New Todo" %>
+  <%= f.submit %>
+  <p><%= todo_item.comment %></p>
+  <%= link_to "Delete", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: {confirm: "Are you sure?"}%>
+<% end %>
